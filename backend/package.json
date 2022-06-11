@@ -1,0 +1,30 @@
+{
+  "name": "@volinda/backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Den Danilov | Blog | Backend",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@notum-cz/strapi-plugin-content-versioning": "^0.4.3",
+    "@strapi/plugin-documentation": "^4.1.12",
+    "@strapi/plugin-i18n": "4.1.12",
+    "@strapi/plugin-users-permissions": "4.1.12",
+    "@strapi/strapi": "4.1.12",
+    "better-sqlite3": "7.4.6",
+    "strapi-plugin-comments": "^2.1.7"
+  },
+  "strapi": {
+    "uuid": "68a23a8d-5263-4171-970f-4770931bee27"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

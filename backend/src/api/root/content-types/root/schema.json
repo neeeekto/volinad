@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "roots",
+  "info": {
+    "singularName": "root",
+    "pluralName": "roots",
+    "displayName": "Root"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}
