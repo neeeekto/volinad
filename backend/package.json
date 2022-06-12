@@ -17,7 +17,8 @@
     "@strapi/plugin-users-permissions": "4.1.12",
     "@strapi/strapi": "4.1.12",
     "better-sqlite3": "7.4.6",
-    "strapi-plugin-comments": "^2.1.7"
+    "strapi-plugin-comments": "^2.1.7",
+    "strapi-plugin-meilisearch": "^0.6.6"
   },
   "strapi": {
     "uuid": "68a23a8d-5263-4171-970f-4770931bee27"
