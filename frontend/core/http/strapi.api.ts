@@ -1,22 +1,24 @@
 import { Result, Entity, ListQueryParameters, MetaWitPageData } from "./types";
 import { fetchAPI } from "./utils";
 
-export class StrapiCollectionApi<TData, TFields = any, TRelations = any> {
+export class StrapiCollectionApi<
+  TData extends Entity<TFields & TRelations>,
+  TFields = any,
+  TRelations = any
+> {
   constructor(private readonly segment: string) {}
 
-  get(id: string): Promise<Result<Entity<TData>, {}>>;
+  get(id: string): Promise<Result<TData, {}>>;
   get(
     params: Partial<ListQueryParameters<TFields, TRelations>>
-  ): Promise<Result<Array<Entity<TData>>, MetaWitPageData>>;
+  ): Promise<Result<Array<TData>, MetaWitPageData>>;
   async get(
     idOrParams: string | Partial<ListQueryParameters<TFields, TRelations>>
   ) {
     if (typeof idOrParams === "string") {
-      return fetchAPI<Result<Entity<TData>, {}>>(
-        `/${this.segment}/${idOrParams}`
-      );
+      return fetchAPI<Result<TData, {}>>(`/${this.segment}/${idOrParams}`);
     } else {
-      return fetchAPI<Result<Array<Entity<TData>>, MetaWitPageData>>(
+      return fetchAPI<Result<Array<TData>, MetaWitPageData>>(
         `/${this.segment}`,
         idOrParams
       );
@@ -24,10 +26,14 @@ export class StrapiCollectionApi<TData, TFields = any, TRelations = any> {
   }
 }
 
-export class StrapiSingleApi<TData> {
+export class StrapiSingleApi<
+  TData extends Entity<TFields & TRelations>,
+  TFields = any,
+  TRelations = any
+> {
   constructor(private readonly segment: string) {}
 
-  async get(): Promise<Result<Entity<TData>>> {
-    return fetchAPI<Result<Entity<TData>>>(`/${this.segment}`);
+  async get(): Promise<Result<TData>> {
+    return fetchAPI<Result<TData>>(`/${this.segment}`);
   }
 }

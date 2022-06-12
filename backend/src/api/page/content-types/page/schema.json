@@ -24,6 +24,11 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "menu",
+      "required": true
     }
   }
 }

@@ -2,9 +2,8 @@ import "../styles/globals.css";
 import type { AppProps, AppContext } from "next/app";
 import App from "next/app";
 import { NextComponentType } from "next";
-import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import React, { useState } from "react";
-import { Layout } from "../layout/Layout";
+import { Layout } from "../layout";
 import { Entity } from "@core/http";
 import { Page, pagesApi } from "@entities/page";
 
@@ -17,16 +16,10 @@ const Root: NextComponentType<
   InitialProps,
   AppProps & InitialProps
 > = ({ Component, pageProps, pages }) => {
-  const [queryClient] = useState(() => new QueryClient());
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <Layout pages={pages}>
-          <Component {...pageProps} />
-        </Layout>
-      </Hydrate>
-    </QueryClientProvider>
+    <Layout pages={pages}>
+      <Component {...pageProps} />
+    </Layout>
   );
 };
 
