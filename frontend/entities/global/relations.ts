@@ -1,5 +1,5 @@
 import { SeoComponent } from "@entities/common.types";
 
-export interface PageRelations {
+export interface GlobalRelations {
   seo: SeoComponent;
 }

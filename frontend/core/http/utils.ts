@@ -33,7 +33,7 @@ export async function fetchAPI<TRes>(
   };
 
   // Build request URL
-  const queryString = qs.stringify(query);
+  const queryString = qs.stringify(query || {});
   const requestUrl = `${getStrapiURL(
     `/api${path}${queryString ? `?${queryString}` : ""}`
   )}`;

@@ -30,15 +30,27 @@ export enum Sort {
   Desc = "desc",
 }
 
-export interface ListQueryParameters<TFields = any, TRelations = any> {
-  sort: Sort;
+export interface QueryPagination {
   "pagination[withCount]": boolean;
   "pagination[page]": number;
   "pagination[pageSize]": number;
   "pagination[start]": number;
   "pagination[limit]": number;
-  fields: Array<keyof TFields>;
-  populate: Array<keyof TRelations>;
+}
+
+export interface QueryFields<TData> {
+  fields: Array<keyof TData>;
+}
+
+export interface QueryPopulate<TData> {
+  populate: Array<keyof TData>;
+}
+
+export interface ListQueryParameters<TFields = any, TRelations = any>
+  extends QueryPopulate<TRelations>,
+    QueryFields<TFields>,
+    QueryPagination {
+  sort: Sort;
 }
 
 export interface Entity<TData> {
@@ -46,7 +58,7 @@ export interface Entity<TData> {
   attributes: TData;
 }
 
-export interface Media extends IHaveDateAt {
+export interface MediaFields extends IHaveDateAt {
   name: string;
   alternativeText: string;
   caption: string;
@@ -62,3 +74,5 @@ export interface Media extends IHaveDateAt {
   provider: string;
   provider_metadata: string;
 }
+
+export interface Media extends Entity<MediaFields> {}
