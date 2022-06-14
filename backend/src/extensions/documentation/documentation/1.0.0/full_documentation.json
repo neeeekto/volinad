@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-06-12T13:00:41.624Z"
+    "x-generation-date": "2022-06-12T18:14:05.710Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -95,7 +95,8 @@
         "properties": {
           "data": {
             "required": [
-              "seo"
+              "seo",
+              "logoText"
             ],
             "type": "object",
             "properties": {
@@ -165,6 +166,12 @@
                     "type": "string"
                   }
                 }
+              },
+              "logoText": {
+                "type": "string"
+              },
+              "blogPageMenu": {
+                "type": "string"
               },
               "versions": {
                 "type": "array",
@@ -996,6 +1003,12 @@
                           "type": "string"
                         }
                       }
+                    },
+                    "logoText": {
+                      "type": "string"
+                    },
+                    "blogPageMenu": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -2095,6 +2108,12 @@
                                       }
                                     }
                                   },
+                                  "logoText": {
+                                    "type": "string"
+                                  },
+                                  "blogPageMenu": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -3013,6 +3032,12 @@
                         "type": "string"
                       }
                     }
+                  },
+                  "logoText": {
+                    "type": "string"
+                  },
+                  "blogPageMenu": {
+                    "type": "string"
                   },
                   "createdAt": {
                     "type": "string",
@@ -4111,6 +4136,12 @@
                                       "type": "string"
                                     }
                                   }
+                                },
+                                "logoText": {
+                                  "type": "string"
+                                },
+                                "blogPageMenu": {
+                                  "type": "string"
                                 },
                                 "createdAt": {
                                   "type": "string",

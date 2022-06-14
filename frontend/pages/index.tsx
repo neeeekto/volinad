@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import { rootApi, Root } from "@entities/root";
 
 interface HomeProps {
@@ -9,7 +7,7 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps, HomeProps> = (props) => {
   return (
-    <div className={styles.container}>
+    <div>
       <div
         dangerouslySetInnerHTML={{ __html: props.root.attributes.content }}
       ></div>

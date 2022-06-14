@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/index.scss";
 import type { AppProps, AppContext } from "next/app";
 import App from "next/app";
 import { NextComponentType } from "next";
@@ -23,7 +23,7 @@ const Root: NextComponentType<
     <>
       <Seo seo={global.attributes.seo}></Seo>
       <SeoContext.Provider value={global.attributes.seo}>
-        <Layout pages={pages}>
+        <Layout pages={pages} global={global}>
           <Component {...pageProps} />
         </Layout>
       </SeoContext.Provider>

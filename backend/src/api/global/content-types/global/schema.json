@@ -21,6 +21,23 @@
       "repeatable": false,
       "component": "shared.seo",
       "required": true
+    },
+    "logoText": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "blogPageMenu": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        }
+      },
+      "type": "string"
     }
   }
 }
