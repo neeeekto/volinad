@@ -6,12 +6,29 @@
   position: sticky;
   top: 0;
   background: #fff;
+  z-index: 100;
 }
 
-.logoText {
+.logo {
   padding: 14px;
+  text-decoration: none;
+  color: var(--black1);
 }
 
+.menu {
+}
+
+$content-desc: 680px;
 .main {
   margin-top: 56px;
+  max-width: 680px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 150px;
+
+  @media (max-width: $content-desc + 20px) {
+    padding: 0 20px;
+    margin: 0;
+  }
 }

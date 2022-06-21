@@ -38,6 +38,38 @@
         }
       },
       "type": "string"
+    },
+    "dateFormat": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "locale": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "en",
+        "ru"
+      ],
+      "default": "ru",
+      "required": true
+    },
+    "moreText": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }

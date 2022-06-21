@@ -18,10 +18,12 @@ export class StrapiCollectionApi<
   async getList(
     params: Partial<ListQueryParameters<TFields, TRelations>>
   ): Promise<Result<Array<TData>, MetaWitPageData>> {
-    return fetchAPI<Result<Array<TData>, MetaWitPageData>>(
-      `/${this.segment}`,
-      params
-    );
+    return fetchAPI<Result<Array<TData>, MetaWitPageData>>(`/${this.segment}`, {
+      ...params,
+      sort: params?.sortBy
+        ? `${params.sortBy as any}:${params.sort}`
+        : undefined,
+    });
   }
 
   getOne(

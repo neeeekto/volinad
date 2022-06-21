@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-06-12T18:14:05.710Z"
+    "x-generation-date": "2022-06-19T19:57:53.510Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -96,7 +96,10 @@
           "data": {
             "required": [
               "seo",
-              "logoText"
+              "logoText",
+              "dateFormat",
+              "locale",
+              "moreText"
             ],
             "type": "object",
             "properties": {
@@ -171,6 +174,19 @@
                 "type": "string"
               },
               "blogPageMenu": {
+                "type": "string"
+              },
+              "dateFormat": {
+                "type": "string"
+              },
+              "locale": {
+                "type": "string",
+                "enum": [
+                  "en",
+                  "ru"
+                ]
+              },
+              "moreText": {
                 "type": "string"
               },
               "versions": {
@@ -1008,6 +1024,19 @@
                       "type": "string"
                     },
                     "blogPageMenu": {
+                      "type": "string"
+                    },
+                    "dateFormat": {
+                      "type": "string"
+                    },
+                    "locale": {
+                      "type": "string",
+                      "enum": [
+                        "en",
+                        "ru"
+                      ]
+                    },
+                    "moreText": {
                       "type": "string"
                     },
                     "createdAt": {
@@ -2114,6 +2143,19 @@
                                   "blogPageMenu": {
                                     "type": "string"
                                   },
+                                  "dateFormat": {
+                                    "type": "string"
+                                  },
+                                  "locale": {
+                                    "type": "string",
+                                    "enum": [
+                                      "en",
+                                      "ru"
+                                    ]
+                                  },
+                                  "moreText": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -3037,6 +3079,19 @@
                     "type": "string"
                   },
                   "blogPageMenu": {
+                    "type": "string"
+                  },
+                  "dateFormat": {
+                    "type": "string"
+                  },
+                  "locale": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "ru"
+                    ]
+                  },
+                  "moreText": {
                     "type": "string"
                   },
                   "createdAt": {
@@ -4141,6 +4196,19 @@
                                   "type": "string"
                                 },
                                 "blogPageMenu": {
+                                  "type": "string"
+                                },
+                                "dateFormat": {
+                                  "type": "string"
+                                },
+                                "locale": {
+                                  "type": "string",
+                                  "enum": [
+                                    "en",
+                                    "ru"
+                                  ]
+                                },
+                                "moreText": {
                                   "type": "string"
                                 },
                                 "createdAt": {
@@ -6605,7 +6673,9 @@
         ],
         "properties": {
           "data": {
-            "required": [],
+            "required": [
+              "slug"
+            ],
             "type": "object",
             "properties": {
               "posts": {
@@ -6722,6 +6792,9 @@
                     "type": "string"
                   }
                 }
+              },
+              "slug": {
+                "type": "string"
               }
             }
           }
@@ -8284,6 +8357,9 @@
                                       }
                                     }
                                   },
+                                  "slug": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -9526,6 +9602,9 @@
                           "type": "string"
                         }
                       }
+                    },
+                    "slug": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -11158,6 +11237,9 @@
                                     }
                                   }
                                 },
+                                "slug": {
+                                  "type": "string"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -12400,6 +12482,9 @@
                         "type": "string"
                       }
                     }
+                  },
+                  "slug": {
+                    "type": "string"
                   },
                   "createdAt": {
                     "type": "string",
@@ -14971,6 +15056,9 @@
                                       }
                                     }
                                   },
+                                  "slug": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -16656,6 +16744,9 @@
                                       "type": "string"
                                     }
                                   }
+                                },
+                                "slug": {
+                                  "type": "string"
                                 },
                                 "createdAt": {
                                   "type": "string",

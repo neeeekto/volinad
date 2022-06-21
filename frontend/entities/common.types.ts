@@ -5,6 +5,10 @@ export interface IHaveDateAt {
   updatedAt: string;
 }
 
+export interface IHavePublishedAt {
+  publishedAt: string;
+}
+
 export interface MetaSocial {
   id: string;
   socialNetwork: "Facebook" | "Twitter";

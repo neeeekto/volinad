@@ -13,7 +13,7 @@ export interface MetaWitPageData {
 
 export interface Result<TRes, TMeta = void> {
   data: TRes;
-  meta: TMeta;
+  meta?: TMeta;
 }
 
 export interface ApiError {
@@ -51,6 +51,7 @@ export interface ListQueryParameters<TFields = any, TRelations = any>
     QueryFields<TFields>,
     QueryPagination {
   sort: Sort;
+  sortBy: keyof TFields;
 }
 
 export interface Entity<TData> {

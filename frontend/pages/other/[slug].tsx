@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { Page, pagesApi } from "@entities/page";
-import { Seo } from "../components/Seo";
+import { Seo } from "../../components/Seo";
 
 interface PageViewProps {
   page: Page;

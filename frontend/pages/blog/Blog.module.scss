@@ -1,0 +1,19 @@
+.card {
+  & + & {
+    margin-top: 24px;
+  }
+}
+
+.meta {
+  margin-top: 25px;
+}
+
+.more {
+  margin-top: 80px;
+}
+
+.moreLink {
+  & + & {
+    margin-top: 17px;
+  }
+}

@@ -8,6 +8,7 @@ import { Page, pagesApi } from "@entities/page";
 import { Global, globalApi } from "@entities/global";
 import { Seo } from "../components/Seo";
 import { SeoContext } from "../contexts/seo.context";
+import { GlobalContext } from "../contexts/global.context";
 
 type InitialProps = {
   pages: Array<Page>;
@@ -22,11 +23,13 @@ const Root: NextComponentType<
   return (
     <>
       <Seo seo={global.attributes.seo}></Seo>
-      <SeoContext.Provider value={global.attributes.seo}>
-        <Layout pages={pages} global={global}>
-          <Component {...pageProps} />
-        </Layout>
-      </SeoContext.Provider>
+      <GlobalContext.Provider value={global}>
+        <SeoContext.Provider value={global.attributes.seo}>
+          <Layout pages={pages} global={global}>
+            <Component {...pageProps} />
+          </Layout>
+        </SeoContext.Provider>
+      </GlobalContext.Provider>
     </>
   );
 };

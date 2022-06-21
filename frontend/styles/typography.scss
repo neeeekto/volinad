@@ -14,17 +14,20 @@ h1 {
   line-height: 60px;
   letter-spacing: -0.02em;
   font-feature-settings: "ss02" on, "ss03" on;
+  margin: 0 0 24px;
 }
 
 h2 {
   font-size: 32px;
   line-height: 40px;
   letter-spacing: -0.01em;
+  margin: 0 0 16px;
 }
 
 h3 {
   font-size: 24px;
   line-height: 32px;
+  margin: 0 0 16px;
 }
 
 h4 {
@@ -36,8 +39,15 @@ p {
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
+  margin: 0;
 }
 
 b {
   font-weight: 700;
+}
+
+.article {
+  h2 {
+    margin-top: 40px;
+  }
 }

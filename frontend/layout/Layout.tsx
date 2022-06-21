@@ -4,6 +4,16 @@ import { Global } from "@entities/global";
 import css from "./Layout.module.scss";
 import Link from "next/link";
 
+const Logo: React.FC<PropsWithChildren> = ({ children }) => {
+  return (
+    <Link type="a" href="/">
+      <a className={css.logo}>
+        <b>{children}</b>
+      </a>
+    </Link>
+  );
+};
+
 const MenuLink: React.FC<PropsWithChildren<{ href: string }>> = ({
   href,
   children,
@@ -19,10 +29,10 @@ export const Layout: React.FC<
   return (
     <>
       <header className={css.header}>
-        <b className={css.logoText}>{props.global.attributes.logoText}</b>
-        <MenuLink href="/">{props.global.attributes.blogPageMenu}</MenuLink>
+        <Logo>{props.global.attributes.logoText}</Logo>
+        <MenuLink href="/blog">{props.global.attributes.blogPageMenu}</MenuLink>
         {props.pages.map((page) => (
-          <MenuLink href={`/${page.attributes.slug}`} key={page.id}>
+          <MenuLink href={`/other/${page.attributes.slug}`} key={page.id}>
             {page.attributes.menu}
           </MenuLink>
         ))}

@@ -1,10 +1,28 @@
-import { StrapiCollectionApi } from "@core/http";
+import {
+  fetchAPI,
+  ListQueryParameters,
+  MetaWitPageData,
+  Result,
+  StrapiCollectionApi,
+} from "@core/http";
 import { Post } from "./model";
 import { PostFields } from "./fields";
 import { PostRelations } from "./relations";
 
-export const postsApi = new StrapiCollectionApi<
-  Post,
-  PostFields,
-  PostRelations
->("posts");
+class PostApi extends StrapiCollectionApi<Post, PostFields, PostRelations> {
+  constructor() {
+    super("posts");
+  }
+
+  bySlug(
+    slug: PostFields["slug"],
+    params?: Partial<ListQueryParameters<PostFields, PostRelations>>
+  ) {
+    return fetchAPI<Result<Array<Post>, MetaWitPageData>>(`/posts`, {
+      ...params,
+      "filters[slug][$eq]": slug,
+    });
+  }
+}
+
+export const postsApi = new PostApi();
